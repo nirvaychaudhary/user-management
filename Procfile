@@ -1,0 +1,1 @@
+web: gunicorn user_managemenet.wsgi
