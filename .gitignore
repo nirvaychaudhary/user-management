@@ -1,5 +1,4 @@
 user_env
 *.pyc
-staticfiles
 .env
 db.sqlite3
