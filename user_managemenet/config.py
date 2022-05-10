@@ -5,7 +5,7 @@ import base64
 # SECURITY WARNING: don't run with debug turned on in production!
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = True
+DEBUG = False
 
 
 # Database
@@ -13,8 +13,12 @@ DEBUG = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dd11gsv0tv38j2',
+        'USER': 'zlelwdltqvoeir',
+        'PASSWORD': 'e2d90baf2e19aa080170b98b62056a4cd53dbbdce391722400a78923fd496900',
+        'HOST': 'ec2-54-172-175-251.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
