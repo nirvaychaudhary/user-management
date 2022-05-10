@@ -24,12 +24,12 @@ config = AutoConfig(search_path=os.path.join(BASE_DIR, 'config'))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = config('DEBUG', default=False, cast=bool)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://user-managing.herokuapp.com/',]
+ALLOWED_HOSTS = ['https://user-managing.herokuapp.com/', '*']
 
 
 # Application definition

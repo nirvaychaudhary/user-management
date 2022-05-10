@@ -5,9 +5,6 @@ import base64
 # SECURITY WARNING: don't run with debug turned on in production!
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = False
-
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
