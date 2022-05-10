@@ -22,7 +22,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from authentication.views import APIOverview
-from authentication.api.views import reset_password, reset_password_confirm
+from authentication.api.views import reset_password, reset_password_confirm, reset_password_redirect
 
 router=routers.DefaultRouter()
 
@@ -48,6 +48,7 @@ urlpatterns = [
     path('authentication/', include('authentication.api.urls', namespace='authentication')),
     path('api/v1/password-reset/', reset_password, name='password-reset'),
     path('api/v1/password-reset/confirm/', reset_password_confirm, name='password-reset-confirm'),
+    path('api/v1/password-reset/redirect/', reset_password_redirect, name='password-reset-redirect'),
     # path('api/v1/password-reset/', include('django_rest_passwordreset.urls', namespace='password_reset')) 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

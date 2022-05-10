@@ -372,6 +372,28 @@ class UserLogView(viewsets.ModelViewSet):
 #     msg.attach_alternative(content, "text/html")
 #     HandleMail(msg).start()
 
+@api_view(['GET','POST'])
+def reset_password_redirect(request):
+    print(request)
+    id = request.GET.get('id')
+    token = request.GET.get('token')
+    try:
+        uid = urlsafe_base64_decode(id).decode()
+        user = User._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    print(user)
+    if user is not None and default_token_generator.check_token(user, token):
+        password = request.data['password']
+        confirm_password = request.data['confirm_password']
+        if password == confirm_password:
+            user.set_password(password)
+            user.save()
+            messages.success(request, 'Password Sucessfully Reset1')
+            return Response(status=status.HTTP_200_OK,data={'message':"password sucessfully reset"})
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST,data={'message':"password does not match"})
+
 @api_view(['POST'])
 def reset_password(request):
     try:
