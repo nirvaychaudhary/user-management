@@ -15,7 +15,8 @@ def APIOverview(request):
 		'Reset Password':'https://user-managing.herokuapp.com/api/v1/password-reset/',
 		'Login': 'https://user-managing.herokuapp.com/authentication/login/',
 		'Logout': 'https://user-managing.herokuapp.com/authentication/logout/',
-		
+		'': '',
+		'': '',
 		'========Password Reset Instruction=====': '=====url path======',
 		'go to the link':'https://user-managing.herokuapp.com/api/v1/password-reset/',
 		'add email in json format':'{ "email":"enter your valid email address"}',
@@ -23,11 +24,15 @@ def APIOverview(request):
 		'open password reset email':'click on reset button and open it in new tab',
 		'after opening link on new tab': 'refresh the page',
 		'at the final': 'provide data in json format as {"password":"new password", "confirm_password":"retype new password"} and submit it',
-
+		'refresh the page': 'password has been sucessfully reset',
+		'': '',
+		'': '',
 		'========Password Change Instruction=====': '=====url path======',
 		'go to the link': 'https://user-managing.herokuapp.com/authentication/change-password/',
 		'type': 'old password, new password and confirm new password',
-
+		'refresh the page': 'password has been sucessfully changed',
+		'': '',
+		'': '',
 		'========API Documentation link=====': '=====url path======',	
 		'using swagger UI': 'https://user-managing.herokuapp.com/swagger/',
 		'from OPENAPI (fka swagger UI)': 'https://user-managing.herokuapp.com/redoc/',	
